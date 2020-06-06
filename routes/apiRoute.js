@@ -13,24 +13,24 @@ router.get("/api/workouts", (req, res) => {
       });
   });
 
-  router.post("/api/transaction", (req, res) => {
-    Transaction.find({})
-      .sort({ date: -1 })
-      .then(dbTransaction => {
-        res.json(dbTransaction);
-      })
-      .catch(err => {
-        res.status(400).json(err);
-      });
-  });
+//   router.post("/api/transaction", (req, res) => {
+//     Transaction.find({})
+//       .sort({ date: -1 })
+//       .then(dbTransaction => {
+//         res.json(dbTransaction);
+//       })
+//       .catch(err => {
+//         res.status(400).json(err);
+//       });
+//   });
 
-  router.put("/api/transaction", (req, res) => {
-    Transaction.find({})
-      .sort({ date: -1 })
-      .then(dbTransaction => {
-        res.json(dbTransaction);
-      })
-      .catch(err => {
-        res.status(400).json(err);
-      });
-  });
+//   router.put("/api/transaction", (req, res) => {
+//     Transaction.find({})
+//       .sort({ date: -1 })
+//       .then(dbTransaction => {
+//         res.json(dbTransaction);
+//       })
+//       .catch(err => {
+//         res.status(400).json(err);
+//       });
+//   });
