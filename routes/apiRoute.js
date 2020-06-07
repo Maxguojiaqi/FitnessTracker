@@ -7,7 +7,7 @@ router.get("/api/workouts", (req, res) => {
 
   db.Workout.find({})
       .sort({ date: -1 })
-      // .populate('exercises')
+      .populate('exercises')
       .exec((error, dbWorkout)=>{
         if (error) {
           res.status(404).json(error)
@@ -28,7 +28,7 @@ router.get("/api/workouts/range", (req, res) => {
 
   db.Workout.find({})
       .sort({ date: -1 })
-      // .populate('exercises')
+      .populate('exercises')
       .exec((error, dbWorkout)=>{
         if (error) {
           res.status(404).json(error)
@@ -71,6 +71,7 @@ router.get("/api/workouts/range", (req, res) => {
       day: Date.now(),
       exercises: []
     });
+    // newWorkout.setTotalDuration();
     newWorkout.save((err)=>{
       if (err) status(400).json(err);
       else res.status(201).json(newWorkout)
