@@ -7,14 +7,42 @@ router.get("/api/workouts", (req, res) => {
 
   db.Workout.find({})
       .sort({ date: -1 })
-      .populate('exercises')
-      .then(async dbWorkout => {
-        console.log(dbWorkout)
-        res.json(dbWorkout);
+      // .populate('exercises')
+      .exec((error, dbWorkout)=>{
+        if (error) {
+          res.status(404).json(error)
+      } else {
+          res.status(201).json(dbWorkout)
+      }
       })
-      .catch(err => {
-        res.status(400).json(err);
-      });
+      // .then(dbWorkout => {
+      //   console.log(dbWorkout)
+      //   res.json(dbWorkout);
+      // })
+      // .catch(err => {
+      //   res.status(400).json(err);
+      // });
+  });
+
+router.get("/api/workouts/range", (req, res) => {
+
+  db.Workout.find({})
+      .sort({ date: -1 })
+      // .populate('exercises')
+      .exec((error, dbWorkout)=>{
+        if (error) {
+          res.status(404).json(error)
+      } else {
+          res.status(201).json(dbWorkout)
+      }
+      })
+      // .then(dbWorkout => {
+      //   console.log(dbWorkout)
+      //   res.json(dbWorkout);
+      // })
+      // .catch(err => {
+      //   res.status(400).json(err);
+      // });
   });
 
   router.put("/api/workouts/:id", async (req, res) => {
