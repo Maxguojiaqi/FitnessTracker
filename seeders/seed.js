@@ -7,8 +7,6 @@ mongoose.connect("mongodb://localhost/workout", {
 });
 
 
-
-
 function createSeed () {
   let workoutSeed = [
     {

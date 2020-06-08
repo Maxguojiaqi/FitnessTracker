@@ -36,13 +36,6 @@ router.get("/api/workouts/range", (req, res) => {
           res.status(201).json(dbWorkout)
       }
       })
-      // .then(dbWorkout => {
-      //   console.log(dbWorkout)
-      //   res.json(dbWorkout);
-      // })
-      // .catch(err => {
-      //   res.status(400).json(err);
-      // });
   });
 
   router.put("/api/workouts/:id", async (req, res) => {
