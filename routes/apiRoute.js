@@ -2,7 +2,7 @@ const router = require("express").Router();
 const db = require("../models/");
 const { ObjectId } = require('mongodb')
 
-
+// Handle getting all the workouts 
 router.get("/api/workouts", (req, res) => {
 
   db.Workout.find({})
@@ -15,15 +15,8 @@ router.get("/api/workouts", (req, res) => {
           res.status(201).json(dbWorkout)
       }
       })
-      // .then(dbWorkout => {
-      //   console.log(dbWorkout)
-      //   res.json(dbWorkout);
-      // })
-      // .catch(err => {
-      //   res.status(400).json(err);
-      // });
   });
-
+// handle getting all the workouts
 router.get("/api/workouts/range", (req, res) => {
 
   db.Workout.find({})
@@ -37,7 +30,7 @@ router.get("/api/workouts/range", (req, res) => {
       }
       })
   });
-
+// adding specific exercise to a workout
   router.put("/api/workouts/:id", async (req, res) => {
     let workoutId = req.params.id
     console.log(workoutId)
@@ -58,7 +51,7 @@ router.get("/api/workouts/range", (req, res) => {
     }
   
   });
-
+// create a new workout plan
   router.post("/api/workouts", (req, res) => {
     const newWorkout = new db.Workout({
       day: Date.now(),
