@@ -1,5 +1,7 @@
+var path = require("path");
+
 module.exports = {
-    Workout: require("./Workout"),
-    Exercise: require("./Exercise")
+    Workout: require(path.join(__dirname, "/Workout")),
+    Exercise: require(path.join(__dirname, "/Exercise"))
   };
   

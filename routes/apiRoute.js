@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const db = require("../models/index");
+const db = require("../models");
 const { ObjectId } = require('mongodb')
 
 // Handle getting all the workouts 
