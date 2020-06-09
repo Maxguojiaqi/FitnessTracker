@@ -42,7 +42,7 @@ Adding Exercise
 View Workouts
 ![appDemo3](./Demos/demo3.JPG)
 
-Demo Link : https://afternoon-chamber-65403.herokuapp.com/
+Demo Link : https://whispering-forest-40330.herokuapp.com/?id=5edee792ef2fc70017cf572d
 
 ## Contributing
 
